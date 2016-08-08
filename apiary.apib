@@ -46,21 +46,26 @@ Get a single product
 ## Create products [POST /api/products]
 Create a new product
 
++ name (string) - The product name
++ description (string) - The product description
++ price (float) - The product price
++ attributes (string) - The product attributes
+
 + Request (application/json)
     + Body
 
             {
-              "name": "Blue widget",
-              "description": "A blue widget",
-              "price": 5.99,
-              "attributes": "{\"colour\": \"Blue\",\"size\": \"Small\"}",
+                "name": "Blue widget",
+                "description": "A blue widget",
+                "price": 5.99,
+                "attributes": "{\"colour\": \"blue\",\"size\": \"Small\"}"
             }
 
 + Response 201 (application/json)
     + Body
 
             {
-              "id": 2
+              "id": 2,
               "name": "Blue widget",
               "description": "A blue widget",
               "price": 5.99,
