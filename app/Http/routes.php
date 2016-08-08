@@ -12,3 +12,4 @@
 */
 
 $app->get('/api/products', 'ProductController@index');
+$app->get('/api/products/{id}', 'ProductController@show');

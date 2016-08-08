@@ -24,3 +24,21 @@ Get a list of products
                     "updated_at": "*"
                 }
             ]
+
+## Get a product [GET /api/products/1]
+Get a single product
+
++ Request (application/json)
+
++ Response 200 (application/json)
+    + Body
+
+            {
+              "id": 1,
+              "name": "Purple widget",
+              "description": "A purple widget",
+              "price": 5.99,
+              "attributes": "{\"colour\": \"Purple\",\"size\": \"Small\"}",
+              "created_at": "*",
+              "updated_at": "*"
+            }
