@@ -89,4 +89,16 @@ class ProductController extends Controller
         // Send response
         return response()->json($product, 200);
     }
+
+    public function destroy($id)
+    {
+        // Get product
+        $product = $this->product->findOrFail($id);
+
+        // Delete product
+        $product->delete();
+
+        // Return empty response
+        return response()->json(['status' => 'deleted'], 200);
+    }
 }
