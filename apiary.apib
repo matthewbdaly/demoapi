@@ -1,0 +1,25 @@
+FORMAT: 1A
+
+# Demo API
+
+# Products [/api/products]
+Product object representation
+
+## Get products [GET /api/products]
+Get a list of products
+
++ Request (application/json)
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "id": 1,
+                "name": "Purple widget",
+                "description": "A purple widget",
+                "price": 5.99,
+                "attributes": {
+                    "colour": "Purple",
+                    "size": "Small"
+                }
+            }
