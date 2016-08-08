@@ -12,4 +12,5 @@
 */
 
 $app->get('/api/products', 'ProductController@index');
+$app->post('/api/products', 'ProductController@store');
 $app->get('/api/products/{id}', 'ProductController@show');

@@ -31,4 +31,28 @@ class ProductController extends Controller
         // Send response
         return response()->json($product, 200);
     }
+
+    public function store(Request $request)
+    {
+        // Validate request
+        $valid = $this->validate($request, [
+            'name' => 'required|string',
+            'description' => 'required|string',
+            'price' => 'required|numeric',
+            'attributes' => 'string',
+        ]);
+
+        // Create product
+        $product = new $this->product;
+        $product->name = $request->input('name');
+        $product->description = $request->input('description');
+        $product->price = $request->input('price');
+        $product->attributes = $request->input('attributes');
+
+        // Save product
+        $product->save();
+
+        // Send response
+        return response()->json($product, 201);
+    }
 }

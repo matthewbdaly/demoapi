@@ -42,3 +42,29 @@ Get a single product
               "created_at": "*",
               "updated_at": "*"
             }
+
+## Create products [POST /api/products]
+Create a new product
+
++ Request (application/json)
+    + Body
+
+            {
+              "name": "Blue widget",
+              "description": "A blue widget",
+              "price": 5.99,
+              "attributes": "{\"colour\": \"Blue\",\"size\": \"Small\"}",
+            }
+
++ Response 201 (application/json)
+    + Body
+
+            {
+              "id": 2
+              "name": "Blue widget",
+              "description": "A blue widget",
+              "price": 5.99,
+              "attributes": "{\"colour\": \"blue\",\"size\": \"Small\"}",
+              "created_at": "*",
+              "updated_at": "*"
+            }
