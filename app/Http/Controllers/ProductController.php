@@ -55,4 +55,38 @@ class ProductController extends Controller
         // Send response
         return response()->json($product, 201);
     }
+
+    public function update(Request $request, $id)
+    {
+        // Validate request
+        $valid = $this->validate($request, [
+            'name' => 'string',
+            'description' => 'string',
+            'price' => 'numeric',
+            'attributes' => 'string',
+        ]);
+
+        // Get product
+        $product = $this->product->findOrFail($id);
+
+        // Update it
+        if ($request->has('name')) {
+            $product->name = $request->input('name');
+        }
+        if ($request->has('description')) {
+            $product->description = $request->input('description');
+        }
+        if ($request->has('price')) {
+            $product->price = $request->input('price');
+        }
+        if ($request->has('attributes')) {
+            $product->attributes = $request->input('attributes');
+        }
+
+        // Save product
+        $product->save();
+
+        // Send response
+        return response()->json($product, 200);
+    }
 }

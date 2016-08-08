@@ -73,3 +73,34 @@ Create a new product
               "created_at": "*",
               "updated_at": "*"
             }
+
+## Update existing products [PATCH /api/products/1]
+Update an existing product
+
++ name (string) - The product name
++ description (string) - The product description
++ price (float) - The product price
++ attributes (string) - The product attributes
+
++ Request (application/json)
+    + Body
+
+            {
+                "name": "Blue widget",
+                "description": "A blue widget",
+                "price": 5.99,
+                "attributes": "{\"colour\": \"blue\",\"size\": \"Small\"}"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+              "id": 2,
+              "name": "Blue widget",
+              "description": "A blue widget",
+              "price": 5.99,
+              "attributes": "{\"colour\": \"blue\",\"size\": \"Small\"}",
+              "created_at": "*",
+              "updated_at": "*"
+            }
